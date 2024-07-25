@@ -1,0 +1,11 @@
+ 
+version: '2'
+services:
+  app:      
+    build:
+      context: .
+      dockerfile: staging.Dockerfile
+    image: ns/redirect:1.0
+    container_name: redirect
+    ports:
+      - "8001:80"
