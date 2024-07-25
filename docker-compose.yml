@@ -1,0 +1,11 @@
+version: '2'
+services:
+  app:
+    build: .
+    image: ns/redirect.as22113.net:1.0
+    container_name: redirect
+    ports:
+      - "8005:8000"
+    volumes:
+      - ".:/app"
+    command: bash -c 'composer install && php artisan serve --host 0.0.0.0 && npm run dev'
